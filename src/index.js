@@ -4,7 +4,7 @@ const express = require('express'),
 const expressApp = express(),
   peerServer = PeerServer({ 
     port: 9000, 
-    path: '/peerserver'
+    path: '/peerserver/'
   });
 
 

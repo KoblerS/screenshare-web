@@ -61,9 +61,10 @@ window.addEventListener('beforeunload', function (e) {
 var uuid = uuidv4();
 
 peer = new Peer(uuid, {
-  host: location.hostname,
-  port: 9000,
-  path: 'peerserver'
+  host: 'splitcast.io',
+  port: 443,
+  path: 'peerserver',
+  secure: true
 });
 
 peer.on('error', function (error) {
