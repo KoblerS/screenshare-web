@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Shared - Bildschirmübertragung</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/loader.css" rel="stylesheet" />
+  <link href="css/fontawesome.min.css" rel="stylesheet" />
+  <link href="css/font.css" rel="stylesheet" />
+
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#319ce7">
+</head>
+
+<body>
+  <div class="loader">
+    <div class="circle">
+      <div class="circleBig circleLine">
+        <div class="twoQuarterBig circleLine">
+          <div class="lineSmallLeft line"></div>
+          <div class="lineSmallRight line"></div>
+          <div class="twoQuarterSmall circleLine">
+            <div class="lineBigUp line"></div>
+            <div class="lineBigDown line"></div>
+            <div class="circleSmall circleLine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop">
+    <div class="disconnect">
+      <i class="fa fa-times"></i>
+    </div>
+    <div class="pause">
+      <i class="fa fa-eye"></i>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <span class="navbar-title">Shared</span>
+  </div>
+
+  <div class="form-group">
+    <h4 for="tx_code">Um sich mit dem Bildschirm zu verbinden, <br /> gib bitte den angezeigten Code ein.</h4>
+    <input type="text" pattern="\d*" maxlength="5" id="tx_code" placeholder="12345" class="form-control" /><br />
+    <button class="button" onclick="connectPeer();" id="btn_connect">Verbinden</button>
+    <span id="errorMessage"></span>
+  </div>
+
+  <script src="js/peerjs.min.js" type="text/javascript"></script>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
+</body>
+
+</html>

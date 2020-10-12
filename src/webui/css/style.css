@@ -1,0 +1,127 @@
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+body {
+  padding: 20px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 3em;
+}
+
+.form-group {
+  width: 100%;
+  margin-top: 60px;
+}
+
+h4 {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  width: 200px !important;
+}
+
+.form-control {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-indent: 4px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#errorMessage {
+  color: #DA291C;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  display: none;
+}
+
+.button {
+  width: 155px;
+  background: #319ce7;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background: #46a3e4;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: #319ce7;
+  color: #fff;
+  line-height: 60px;
+}
+
+.navbar-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 19px;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.backdrop .disconnect, .backdrop .pause {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  font-size: 50px;
+  line-height: 100px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.backdrop .disconnect {
+  background: red;
+  margin-top: -100px;
+  border-radius: 50%;
+}
+
+.backdrop .pause {
+  width: 100px;
+  height: 100px;
+  background: #46a3e4;
+  color: #fff;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: 70px;
+  border-radius: 50%;
+  font-size: 50px;
+  line-height: 100px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.backdrop .disconnect:hover, .backdrop .pause:hover {
+  opacity: 0.8;
+}
