@@ -4,7 +4,14 @@ const express = require('express'),
   { PeerServer } = require('peer');
 
 const expressApp = express(),
-  peerServer = PeerServer({ port: 9000, path: '/peerserver' });
+  peerServer = PeerServer({ 
+    port: 9000, 
+    path: '/peerserver',
+    ssl: {
+      key: fs.readFileSync(__dirname + '/certs/server.key'),
+      cert: fs.readFileSync(__dirname + '/certs/server.cert')
+    }
+  });
 
 
 https.createServer({
