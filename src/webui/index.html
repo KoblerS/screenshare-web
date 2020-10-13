@@ -11,8 +11,6 @@
   <link href="css/fontawesome.min.css" rel="stylesheet" />
   <link href="css/font.css" rel="stylesheet" />
 
-  <link rel="manifest" href="/manifest.webmanifest">
-
   <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
@@ -63,7 +61,7 @@
 
   <div class="form-group">
     <h4 for="tx_code">Um sich mit dem Bildschirm zu verbinden, <br /> gib bitte den angezeigten Code ein.</h4>
-    <input type="text" pattern="\d*" maxlength="5" id="tx_code" placeholder="12345" class="form-control" /><br />
+    <input type="number" pattern="\d*" maxlength="5" id="tx_code" placeholder="12345" class="form-control" /><br />
     <button class="button" onclick="connectPeer();" id="btn_connect">Verbinden</button>
     <span id="errorMessage"></span>
   </div>

@@ -13,7 +13,7 @@ body {
 
 .form-group {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 h4 {
@@ -26,7 +26,7 @@ img {
 }
 
 .form-control {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 150px;
   height: 40px;
   border: 1px solid #ddd;
@@ -34,6 +34,7 @@ img {
   text-indent: 4px;
   font-size: 24px;
   text-align: center;
+  outline: none;
 }
 
 #errorMessage {
@@ -58,6 +59,7 @@ img {
 
 .button:hover {
   background: #46a3e4;
+  opacity: 0.9;
 }
 
 .navbar {
@@ -124,4 +126,15 @@ img {
 
 .backdrop .disconnect:hover, .backdrop .pause:hover {
   opacity: 0.8;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

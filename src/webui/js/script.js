@@ -17,6 +17,13 @@ $(document).ready(function () {
     $('#tx_code').val(connectCode);
   }
 
+  $("#tx_code").inputFilter(function(value) {
+    if(value.length > 5) {
+      return false;
+    }
+    return /^\d*$/.test(value);    // Allow digits only, using a RegExp
+  });
+
   $('.disconnect').click(function () {
     disconnect();
   });
@@ -46,7 +53,7 @@ $(document).ready(function () {
 function startRecording() {
   isPaused = false;
   if (navigator.getDisplayMedia) {
-    return navigator.getDisplayMedia({ video: true });
+    return navigator.getDisplayMedia({ video: true, audio: true });
   } else if (navigator.mediaDevices.getDisplayMedia) {
     return navigator.mediaDevices.getDisplayMedia({ audio: true, video: true });
   } else {
@@ -96,6 +103,23 @@ function connectPeer() {
   });
 }
 
+(function($) {
+  $.fn.inputFilter = function(inputFilter) {
+    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      } else {
+        this.value = "";
+      }
+    });
+  };
+}(jQuery));
+
 async function captureScreen(connectCode) {
   stream = await startRecording();
 
@@ -103,6 +127,9 @@ async function captureScreen(connectCode) {
     return;
 
   call = peer.call(connectCode, stream);
+
+  stream.addTrack(stream.getTracks()[0], stream);
+
 
   $('.backdrop').show();
 
@@ -114,7 +141,6 @@ async function captureScreen(connectCode) {
     connected = false;
   });
   stream.addEventListener('inactive', e => {
-    console.log('ended');
     disconnect();
   });
 }
